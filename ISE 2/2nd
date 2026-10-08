@@ -1,0 +1,21 @@
+import pandas as pd
+
+# Read CSV file
+df = pd.read_csv("students.csv")
+
+# Display missing values
+print("Missing values:")
+print(df.isnull().sum())
+
+# Replace missing marks with the mean
+marks_columns = ["Maths", "Science", "English"]
+
+for col in marks_columns:
+    df[col] = df[col].fillna(df[col].mean())
+
+print("\nData after replacing missing values:")
+print(df)
+
+# Calculate statistics
+print("\nStatistics:")
+print(df[marks_columns].describe())

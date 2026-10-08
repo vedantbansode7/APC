@@ -1,0 +1,27 @@
+def count_elements(lst):
+    even = 0
+    odd = 0
+    positive = 0
+    negative = 0
+
+    for num in lst:
+        if num % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+
+        if num > 0:
+            positive += 1
+        elif num < 0:
+            negative += 1
+
+    return even, odd, positive, negative
+
+lst = [10, -5, 3, -8, 7, 2, -4]
+
+even, odd, positive, negative = count_elements(lst)
+
+print("Even numbers:", even)
+print("Odd numbers:", odd)
+print("Positive numbers:", positive)
+print("Negative numbers:", negative)
